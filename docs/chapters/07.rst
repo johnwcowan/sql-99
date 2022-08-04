@@ -271,7 +271,7 @@ long.
 Standard requires implementors to define ``CHAR``'s maximum length. FIPS says
 that ``CHAR`` should have a maximum length of at least 1000 characters. [OCELOT
 Implementation] The OCELOT DBMS that comes with this book allows you to define
-a length ranging from 1 to 4096 for ``CHAR``.
+a length ranging from 1 to more than 4096 for ``CHAR``.
 
 [Obscure Rule] The optional ``CHARACTER SET`` clause names the Character set
 that the <data type>'s values belong to. Your current <AuthorizationID> must

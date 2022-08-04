@@ -799,6 +799,10 @@ place. In ISO SQL, ``IPD.IDA[n].SQL_DESC_LENGTH`` may be changed with the
 ``SQLSetDescField`` function. In ANSI SQL, it may not be. In ODBC, the name is
 ``SQL_DESC_OCTET_LENGTH_PTR``.
 
+[Obscure Rule] When SQL_DESC_OCTET_LENGTH_POINTER is a null pointer,
+and the data type is string, DBMSs will assume that the string is
+null-terminated.
+
 [Obscure Rule] The rules change if ``SQL_DESC_OCTET_LENGTH_POINTER`` and
 ``SQL_DESC_INDICATOR_POINTER`` contain the same address value (this is actually
 imprecise: the rules don't really change, but octet length is always set after
@@ -2518,7 +2522,7 @@ are shown in skeletal form. There is a test for truncation.
         printf("Error ... aborting\n");
         break; }
        if (sqlreturn == SQL_SUCCESS_WITH_WARNING) {
-        /* We could call SQLGetDiagnostics to find out if sqlstate == '01004'
+        /* We could call SQLGetDiagField to find out if sqlstate == '01004'
             (string data right truncation), diagnostics is a later chapter.
           Instead, we'll see if see if the DBMS had more data than it sent. */
         if (char_string_ind >= sizeof(char_string) printf("[Truncated!]"); }
@@ -3447,7 +3451,7 @@ Column might contain nulls.
 * Sometimes ``SQLDescribeCol`` is called in order to provide information for a
   reporting program. In that case, ``ColumnName`` and ``NameLength`` are used
   for the report-Column headers, ``DataType`` is used to determine whether
-  right justification is needed, ``ColumnLength+2`` is the maximum Column
+  right justification is needed, ``ColumnSize+2`` is the maximum Column
   width, ``DecimalDigits`` helps COBOL programs decide what the totallers' PICs
   are and ``Nullable``, if true, may cause creation of a separate "null?"
   Column.

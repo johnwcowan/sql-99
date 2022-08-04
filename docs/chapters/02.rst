@@ -2051,7 +2051,8 @@ a <regular identifier> are mapped to uppercase letters before comparison and
 storage, examples #3 and #4 are the same name -- and they're also the same name
 as example #1. Because lowercase letters in a <delimited identifier> are not
 mapped to uppercase letters at any time, example #2 is not the same name as
-example #4. Because there is no mapping of accented characters in an
+example #4. Because there is no mapping of accented characters
+to unaccented characters (i.e. to simple Latin letters) in an
 <identifier>, example #5 is not the same name as any of the others -- but ë is
 a letter, and so qualifies as a <regular identifier>. (This example assumes
 that the MS-Windows encoding scheme -- the one that Microsoft calls "ANSI" --

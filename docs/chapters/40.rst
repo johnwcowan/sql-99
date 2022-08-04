@@ -467,7 +467,7 @@ descriptions.
         If (we're using WideChar i.e. 16 bits per character)
           sizeof(null-terminator) = 2
         Else sizeof(null-terminator) = 1
-        Set # of octets to copy = MaxTargetOctetLength-sizeof(null-terminator)
+        Length: # of octets to copy
         If (# of octets to copy < 0)
           /* Put out '\0' if possible, but there's no room for copying */
         Else
@@ -510,10 +510,10 @@ descriptions.
       SQLINTEGER returnsize;  /* SQLINTEGER is always 32-bit signed */
       ...
       CharacterStringRetrieval(target,"ABC",5,&returnsize);
-      /* Now target has: ABC\0 and returnsize = 5. */
+      /* Now target has: ABC\0 and returnsize = 3. */
       ...
       CharacterStringRetrieval(target,"ABC",3,&returnsize);
-      /* Now target has: AB\0 and returnsize = 2. */
+      /* Now target has: AB\0 and returnsize = 3. */
 
 **ODBC:** In ODBC 1.0's documentation there was some contradictory information
 about the workings of Character String Retrieval, but everything is settled

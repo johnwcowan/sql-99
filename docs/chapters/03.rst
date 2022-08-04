@@ -208,7 +208,7 @@ may range from -9 to +9 (1 digit defined or default):
 
 The optional scale, if specified, is an unsigned integer, greater than zero,
 that defines the maximum number of digits in the scale of acceptable values. It
-must be less than the precision and defaults to zero if omitted. You may define
+must be less than or equal to the precision and defaults to zero if omitted. You may define
 a scale for ``NUMERIC`` only if you also define a precision: if no precision is
 defined, the scale must default to zero.
 
@@ -270,7 +270,7 @@ may range from -9 to +9 (1 digit defined or default):
 
 The optional scale, if specified, is an unsigned integer, greater than zero,
 that defines the maximum number of digits in the scale of acceptable values. It
-must be less than the precision and defaults to zero if omitted. You may define
+must be less than or equal to the precision and defaults to zero if omitted. You may define
 a scale for ``DEC`` only if you also define a precision: if no precision is
 defined, the scale must default to zero.
 

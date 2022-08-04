@@ -149,7 +149,7 @@ About 50% of English-world phone books have additional rules:
   example: "McDonald" before "Macdonald" before "Maastricht".
 
 - Ste and St appear as if they were spelled "Saint". For example: "St John"
-  before "Saan Stores Limited".
+  before "Sann Stores Limited".
 
 - In these cases, we effectively combine a group of letters into one, and place
   the result in the hidden interstices between O and M, or between R and S. It

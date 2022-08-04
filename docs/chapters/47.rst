@@ -615,7 +615,7 @@ Character String Retrieval.
     ::
 
       SQLGetDiagField(
-         ...,...,n,SQL_DIAG_CONDITION_NAME,&charstring,sizeof(charstring),
+         ...,...,n,SQL_DIAG_CONDITION_IDENTIFIER,&charstring,sizeof(charstring),
          &charstring_size);
 
     This field gives you the name of an unhandled user-defined exception.
@@ -1388,7 +1388,7 @@ with a warning.
 ``01S07  warning-fractional truncation`` (ODBC 3)
     You'll get this error if, for example, you assigned the value 5.432 to a
     Column whose definition is ``DECIMAL(3,2)`` -- that is, the scale of the
-    target is 2 and the scale of the source is 3, so only 5.4 is stored. A
+    target is 2 and the scale of the source is 3, so only 5.43 is stored. A
     problem with the non-fractional part would result in another SQLSTATE:
     ``22003``.
 

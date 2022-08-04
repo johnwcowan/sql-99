@@ -102,6 +102,13 @@ Write SQL <keyword>s in upper case. Write <Table name>s with an initial
 capital, small letters after that; when a <Table name> has two parts, use an
 initial capital for each part. Write <Column name>s in lower case. For example:
 
+Before applying this rule, read this tragic tale: When using Inprise
+(Delphi) BDE, a user got a result set via: SELECT * FROM Emps. Then,
+using TDBNavigator, he tried to update the field -- not realizing that
+Delphi will internally generate: UPDATE "Emps" ... that is, Delphi changes
+a regular identifier to a delimited identifier during under-the-covers
+processing. Result: weird errors.
+
 ::
 
     CREATE TABLE Widgets (

@@ -27,13 +27,13 @@ significant octet). ``BLOB``\s are stored in the binary string <data type>:
 ===============
 
 A <BLOB literal> is the letter "X" (upper case mandatory) followed by a string
-of zero or more *hexits* inside a pair of single quote marks. A hexit is either
+of zero or more *hexit* pairs inside a pair of single quote marks. A hexit is either
 (*a*) any of the digits 0 through 9 or (*b*) any of the letters A through F
 (upper case or lower case allowed) and is four bits long -- 0, 1, 2, 3, 4, 5,
 6, 7, 8, 9, A, B, C, D, E and F are interpreted as 0000, 0001, 0010, 0011,
 0100, 0101, 0110, 0111, 1000, 1001, 1010, 1011, 1100, 1101, 1110 and 1111,
 respectively.) Its <data type> is variable length ``BLOB``. The <literal>'s
-length is four times the number of hexits inside the quote marks; the
+length in bits is four times the number of hexits inside the quote marks; the
 delimiting single quotes are not part of the <literal>, therefore they are not
 included in the calculation of the <BLOB literal>'s size. Here are some
 examples of <BLOB literal>s:
@@ -461,10 +461,13 @@ some examples of ``OVERLAY``:
 
 ::
 
-   OVERLAY(X'1049FE2996D54AB7' PLACING X'1010' FROM 5)
-    -- returns 1049FE2910104AB7
-   OVERLAY(X'1049FE2996D54AB7' PLACING X'1010' FROM 5 FOR 1)
-    -- returns 1049FE291010D54AB7
+   OVERLAY(X'ABCDEF' PLACING X'01' FROM 2)
+    -- returns AB01EF
+   OVERLAY(X'CDEF' PLACING X'012345' FROM 2 FOR 3)
+    -- returns CD012345
+   OVERLAY(X'CDEFABCDEF' PLACING X'012345' FROM 2 FOR 3)
+    -- returns CD012345EF
+
 
 [Obscure Rule] ``OVERLAY`` can also operate on a character string. We've
 ignored this option for now -- look for it in our chapter on character strings.
@@ -549,9 +552,9 @@ returns ``NULL``. If ``blob_argument_1`` is a zero-length binary string,
 
 ::
 
-   POSITION(X'3D' IN X'AF923DA7')
-   -- returns 5
 
+   POSITION(X'3D' IN X'AF923DA7')
+    -- returns 3
 [NON-PORTABLE] The precision of ``POSITION``'s result is non-standard because
 the SQL Standard requires implementors to define the result's precision.
 [OCELOT Implementation] The OCELOT DBMS that comes with this book gives the

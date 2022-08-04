@@ -551,5 +551,5 @@ effectively performed in the order specified by that precedence.
 Often, the Standard is silent on the subject of precedence. In cases where the
 precedence of operators in an SQL statement is not specifically determined
 either by the rules stated in the Standard, or by parentheses within the SQL
-statement, evaluation of expressions is effectively performed from left to
+statement, evaluation of expressions is generally performed from left to
 right.

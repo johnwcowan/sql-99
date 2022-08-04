@@ -521,7 +521,8 @@ In the following tables:
   letter and three digits or a letter, three digits, a hyphen and one or two
   additional digits. Feature ID values without a hyphen identify complete
   features. Feature ID values containing a hyphen and additional digits
-  identify subfeatures that help to define a complete feature.
+  identify subfeatures that help to define a complete feature. (Feature
+  identification numbers have changed since this book went to print.)
 
 * The second column, "Feature Description", gives a brief description of
   the feature or subfeature.

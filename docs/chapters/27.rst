@@ -162,12 +162,12 @@ Here's an example of a UDT definition:
 
 ::
 
-    CREATE TYPE book_udt AS                -- the UDT name will be book_udt
-    title CHAR(40),                        -- title is the first attribute
-    buying_price DECIMAL(9,2),             -- buying_price is the second attribute
-    selling_price DECIMAL(9,2)             -- selling_price is the third attribute
-    NOT FINAL                              -- this is a mandatory Finality Clause
-    METHOD profit( ) RETURNS DECIMAL(9,2); -- profit is a method, defined later
+    CREATE TYPE book_udt AS (               -- the UDT name will be book_udt
+    title CHAR(40),                         -- title is the first attribute
+    buying_price DECIMAL(9,2),              -- buying_price is the second attribute
+    selling_price DECIMAL(9,2)              -- selling_price is the third attribute
+    NOT FINAL                               -- this is a mandatory Finality Clause
+    METHOD profit( ) RETURNS DECIMAL(9,2)); -- profit is a method, defined later
 
 This ``CREATE TYPE`` statement results in a UDT named ``BOOK_UDT``. The
 components of the UDT are three attributes (named ``TITLE``, ``BUYING_PRICE``

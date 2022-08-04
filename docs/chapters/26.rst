@@ -382,7 +382,7 @@ clause: a variable declaration list. The required syntax is:
 ::
 
    <variable declaration> ::=
-   DECLARE <SQL variable name> <data type> [ DEFAULT default value ]
+   DECLARE <SQL variable name> [ { , <SQL variable name> } ] <data type> [ DEFAULT default value ]
 
 Here's an example:
 

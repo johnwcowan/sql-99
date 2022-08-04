@@ -786,7 +786,7 @@ has the same effect as this SQL statement:
 .. TIP::
 
    You can't define constants in SQL, but you can define constant functions.
-   They help ensure that values like ``p`` (pi) are defined only once, and
+   They help ensure that values like ``π`` (pi) are defined only once, and
    are referenced by a name rather than a <literal>.
 
 *Routine Example -- Subquery Function*

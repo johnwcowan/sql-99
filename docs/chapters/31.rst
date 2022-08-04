@@ -489,7 +489,10 @@ The required syntax for an <in predicate> is as follows.
 
        <in predicate value> ::=
        <Table subquery> |
-       (row_expression [ {,row_expression}. . . ])
+       (row_expression  {,row_expression}. . . )
+
+(SQL-92 allowed a single <row-expression>, but at least two are required by SQL-99.
+SQL-2005 removed this requirement again.)
 
 
 An <in predicate> compares a value to a collection of values and returns either

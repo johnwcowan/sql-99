@@ -260,7 +260,8 @@ AGENT
     Or SQL-agent. A job started by a user, which is bound to a client job, which
     calls a server. So essentially an agent is an instance of the user's
     application program. (In direct SQL the agent would be part of the
-    implementation, though.)
+    implementation, though.) An SQL agent can be thought of as something
+    (either a user or a program) that produces SQL statements.
 
 AGGREGATE FUNCTION
     See: SET FUNCTION.
@@ -2287,6 +2288,10 @@ FAMILY
 
     [2] Similarly to [1], a "Table family" is the set of all Tables with a common
     supertable.
+
+FAP
+    Stands for Format and Protocols, refers to formal specification of
+    the structure and handshaking necessary for client/server interaction.
 
 FEATURE
     A capability of a particular DBMS, to handle a certain data type or operation.

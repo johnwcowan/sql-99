@@ -211,12 +211,10 @@ latter case, you can use the specifications ``DEFAULT`` (for insert default
 value), ``NULL`` (for insert null value), ``ARRAY??(??)`` or ``ARRAY[]`` (for
 insert an empty array) within the "value commalist" to specify a value for a
 Column. The order and number of the values must correspond to the order and
-number of the Columns in the ``INSERT`` Column list. If you're using a <query
-expression>, the ``INSERT``\'s <Table reference> may not identify a Table that
-also appears in any ``FROM`` clause in that <query expression>. The <query
-expression> provides zero or more rows of data values when it is evaluated: its
-search conditions are effectively evaluated for each row before any rows are
-added to the target Table. Here's an example:
+number of the Columns in the ``INSERT`` Column list.  The <query expression>
+provides zero or more rows of data values when it is evaluated: its search
+conditions are effectively evaluated for each row before any rows are added
+to the target Table. Here's an example:
 
 ::
 

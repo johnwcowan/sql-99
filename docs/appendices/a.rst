@@ -7,7 +7,10 @@ Appendix A -- Remote Database Access
 .. include:: ../_include/note.rst
 
 Remote Database Access (RDA) is a standard for interfacing to databases via
-some network. The standards for networks are usually bound up with a hierarchy
+some network. (It is not to be confused with IBM's Distributed Relational
+Database Architecture (DRDA).  RDA and DRDA are both specs for client/server
+messaging, but are mutually incompatible.  Several vendors support DRDA.)
+The standards for networks are usually bound up with a hierarchy
 called the Open Systems Interconnect (OSI) layers, which look like this:
 
 ::

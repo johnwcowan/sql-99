@@ -224,6 +224,9 @@ equivalent:
 
    CREATE CHARACTER SET bob.charset_1 GET LATIN1;
 
+Omitting AS is technically not valid SQL, but NIST requires vendors to support it.
+Nobody notices, because few vendors support character sets at all.
+
 The optional ``COLLATE`` clause of the ``CREATE CHARACTER SET`` statement
 allows you to define a default Collation for your user-defined Character set
 that is different from the default Collation of its source Character set. Your
